@@ -1,0 +1,2094 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Your super  ApplicationAPI",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "http://80.78.246.59/Stech/public/api/StartJob": {
+            "post": {
+                "tags": [
+                    "Jobs"
+                ],
+                "summary": "StartJob",
+                "description": "StartJob",
+                "operationId": "StartJob",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ],
+                                "properties": {
+                                    "job_id": {
+                                        "type": "string",
+                                        "format": "job_id",
+                                        "example": "1"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/CreateTender": {
+            "post": {
+                "tags": [
+                    "tender"
+                ],
+                "summary": "CreateTender",
+                "description": "CreateTender",
+                "operationId": "CreateTender",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ],
+                                "properties": {
+                                    "category_id": {
+                                        "type": "string",
+                                        "format": "category_id",
+                                        "example": "1"
+                                    },
+                                    "category_name": {
+                                        "type": "string",
+                                        "format": "category_name",
+                                        "example": "Грузо-перевозки"
+                                    },
+                                    "sub_category_id": {
+                                        "type": "string",
+                                        "format": "sub_category_id",
+                                        "example": "2"
+                                    },
+                                    "sub_category_name": {
+                                        "type": "string",
+                                        "format": "sub_category_name",
+                                        "example": "2"
+                                    },
+                                    "region_id": {
+                                        "type": "string",
+                                        "format": "region_id",
+                                        "example": "1"
+                                    },
+                                    "region_name": {
+                                        "type": "string",
+                                        "format": "region_name",
+                                        "example": "Москва и Московская обл."
+                                    },
+                                    "city_id": {
+                                        "type": "string",
+                                        "format": "city_id",
+                                        "example": "1"
+                                    },
+                                    "city_name": {
+                                        "type": "string",
+                                        "format": "city_name",
+                                        "example": "Москва"
+                                    },
+                                    "street": {
+                                        "type": "string",
+                                        "format": "street",
+                                        "example": "Абрамцевская улица"
+                                    },
+                                    "date_time": {
+                                        "type": "string",
+                                        "format": "date_time",
+                                        "example": "13/08/2022 09:00"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "format": "description",
+                                        "example": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dumm"
+                                    },
+                                    "photo[]": {
+                                        "type": "file",
+                                        "format": "photo[]",
+                                        "example": "photo.png"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/getMytender": {
+            "get": {
+                "tags": [
+                    "tender"
+                ],
+                "summary": "Get list of Category",
+                "description": "Returns list of Category",
+                "operationId": "getMytender",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/deleteTender": {
+            "post": {
+                "tags": [
+                    "tender"
+                ],
+                "summary": "deleteTender",
+                "description": "deleteTender",
+                "operationId": "deleteTender",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "tender_id"
+                                ],
+                                "properties": {
+                                    "tender_id": {
+                                        "type": "string",
+                                        "format": "tender_id",
+                                        "example": "1"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/DeleteTenderPhoto": {
+            "post": {
+                "tags": [
+                    "tender"
+                ],
+                "summary": "DeleteTenderPhoto",
+                "description": "DeleteTenderPhoto",
+                "operationId": "DeleteTenderPhoto",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "tender_id"
+                                ],
+                                "properties": {
+                                    "tender_id": {
+                                        "type": "string",
+                                        "format": "tender_id",
+                                        "example": "1"
+                                    },
+                                    "photo_id": {
+                                        "type": "string",
+                                        "format": "photo_id",
+                                        "example": "1"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/UpdateTender": {
+            "post": {
+                "tags": [
+                    "tender"
+                ],
+                "summary": "UpdateTender",
+                "description": "UpdateTender",
+                "operationId": "UpdateTender",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "tender_id"
+                                ],
+                                "properties": {
+                                    "tender_id": {
+                                        "type": "string",
+                                        "format": "tender_id",
+                                        "example": "1"
+                                    },
+                                    "photo[]": {
+                                        "type": "file",
+                                        "format": "photo[]",
+                                        "example": "photo.png"
+                                    },
+                                    "region_id": {
+                                        "type": "string",
+                                        "format": "region_id",
+                                        "example": "1"
+                                    },
+                                    "region_name": {
+                                        "type": "string",
+                                        "format": "region_name",
+                                        "example": "Москва и Московская обл."
+                                    },
+                                    "city_id": {
+                                        "type": "string",
+                                        "format": "city_id",
+                                        "example": "1"
+                                    },
+                                    "city_name": {
+                                        "type": "string",
+                                        "format": "city_name",
+                                        "example": "Москва"
+                                    },
+                                    "street": {
+                                        "type": "string",
+                                        "format": "street",
+                                        "example": "Ivanovo 45/1"
+                                    },
+                                    "date_time": {
+                                        "type": "string",
+                                        "format": "date_time",
+                                        "example": "13/08/2022 09:00"
+                                    },
+                                    "description": {
+                                        "type": "string",
+                                        "format": "description",
+                                        "example": "description   min:30 charset"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/getAllTenderForRoleId3": {
+            "get": {
+                "tags": [
+                    "tender"
+                ],
+                "summary": "Get list of getAllTenderForRoleId3",
+                "description": "Returns list of getAllTenderForRoleId3",
+                "operationId": "getAllTenderForRoleId3",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/getCategory": {
+            "get": {
+                "tags": [
+                    "GetParametrForProject"
+                ],
+                "summary": "Get list of Category",
+                "description": "Returns list of Category",
+                "operationId": "getCategory",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/getRegion": {
+            "get": {
+                "tags": [
+                    "GetParametrForProject"
+                ],
+                "summary": "Get list of Region",
+                "description": "Returns list of Region",
+                "operationId": "getRegion",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/userlogin": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "userlogin",
+                "description": "userlogin",
+                "operationId": "userlogin",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ],
+                                "properties": {
+                                    "phone": {
+                                        "type": "string",
+                                        "format": "phone",
+                                        "example": "+37493073584"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "phone_code",
+                                        "example": "11111111"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/userlogout": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "userlogout",
+                "description": "userlogout",
+                "operationId": "userlogout",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/sendcodeforgotpassword": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "sendcodeforgotpassword",
+                "description": "sendcodeforgotpassword",
+                "operationId": "sendcodeforgotpassword",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/comparecoderesetpassword": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "comparecoderesetpassword",
+                "description": "comparecoderesetpassword",
+                "operationId": "comparecoderesetpassword",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ],
+                                "properties": {
+                                    "phone": {
+                                        "type": "string",
+                                        "format": "phone",
+                                        "example": "+37493073584"
+                                    },
+                                    "reset_password_code": {
+                                        "type": "string",
+                                        "format": "reset_password_code",
+                                        "example": "1111"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/updatePasswordResetPassword": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "updatePasswordResetPassword",
+                "description": "updatePasswordResetPassword",
+                "operationId": "updatePasswordResetPassword",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ],
+                                "properties": {
+                                    "phone": {
+                                        "type": "string",
+                                        "format": "phone",
+                                        "example": "+37493073584"
+                                    },
+                                    "reset_password_code": {
+                                        "type": "string",
+                                        "format": "reset_password_code",
+                                        "example": "1111"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "111111"
+                                    },
+                                    "password_confirmation": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "111111"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/createMessage": {
+            "post": {
+                "tags": [
+                    "Message"
+                ],
+                "summary": "createMessage",
+                "description": "createMessage",
+                "operationId": "createMessage",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ],
+                                "properties": {
+                                    "receiver_id": {
+                                        "type": "string",
+                                        "format": "receiver_id",
+                                        "example": "1"
+                                    },
+                                    "message": {
+                                        "type": "string",
+                                        "format": "message",
+                                        "example": "Грузо-перевозки"
+                                    },
+                                    "file": {
+                                        "type": "file",
+                                        "format": "file",
+                                        "example": "photo.png"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/ChatUser": {
+            "get": {
+                "tags": [
+                    "Message"
+                ],
+                "summary": "Get list of ChatUser",
+                "description": "Returns list of ChatUser",
+                "operationId": "ChatUser",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/OnePageMessage": {
+            "post": {
+                "tags": [
+                    "Message"
+                ],
+                "summary": "OnePageMessage",
+                "description": "OnePageMessage",
+                "operationId": "OnePageMessage",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ],
+                                "properties": {
+                                    "receiver_id": {
+                                        "type": "string",
+                                        "format": "receiver_id",
+                                        "example": "1"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/addNewInvite": {
+            "post": {
+                "tags": [
+                    "Invite"
+                ],
+                "summary": "addNewInvite",
+                "description": "addNewInvite",
+                "operationId": "addNewInvite",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ],
+                                "properties": {
+                                    "receiver_id": {
+                                        "type": "string",
+                                        "format": "receiver_id",
+                                        "example": "1"
+                                    },
+                                    "tender_id": {
+                                        "type": "string",
+                                        "format": "tender_id",
+                                        "example": "2"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/getRoleId3Invite": {
+            "get": {
+                "tags": [
+                    "Invite"
+                ],
+                "summary": "Get list of getRoleId3Invite",
+                "description": "Returns list of getRoleId3Invite",
+                "operationId": "getRoleId3Invite",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/SuccsesInvite": {
+            "post": {
+                "tags": [
+                    "Invite"
+                ],
+                "summary": "SuccsesInvite",
+                "description": "SuccsesInvite",
+                "operationId": "SuccsesInvite",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ],
+                                "properties": {
+                                    "sender_id": {
+                                        "type": "string",
+                                        "format": "sender_id",
+                                        "example": "1"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/deleteInvite": {
+            "post": {
+                "tags": [
+                    "Invite"
+                ],
+                "summary": "deleteInvite",
+                "description": "deleteInvite",
+                "operationId": "deleteInvite",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ],
+                                "properties": {
+                                    "sender_id": {
+                                        "type": "string",
+                                        "format": "sender_id",
+                                        "example": "1"
+                                    },
+                                    "invite_id": {
+                                        "type": "string",
+                                        "format": "invite_id",
+                                        "example": "1"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/CreateNotification": {
+            "post": {
+                "tags": [
+                    "Notification"
+                ],
+                "summary": "CreateNotification",
+                "description": "CreateNotification",
+                "operationId": "CreateNotification",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "tender_id"
+                                ],
+                                "properties": {
+                                    "tender_id": {
+                                        "type": "string",
+                                        "format": "tender_id",
+                                        "example": "1"
+                                    },
+                                    "reciver_id": {
+                                        "type": "string",
+                                        "format": "reciver_id",
+                                        "example": "1"
+                                    },
+                                    "message": {
+                                        "type": "string",
+                                        "format": "message",
+                                        "example": "hello world"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/getMyNotoficationRoleId2": {
+            "get": {
+                "tags": [
+                    "Notification"
+                ],
+                "summary": "Get list of My notification",
+                "description": "Returns list of Category",
+                "operationId": "getMyNotoficationRoleId2",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/AddRoleId3Reviews": {
+            "post": {
+                "tags": [
+                    "estimates"
+                ],
+                "summary": "AddRoleId3Reviews",
+                "description": "AddRoleId3Reviews",
+                "operationId": "AddRoleId3Reviews",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ],
+                                "properties": {
+                                    "grade": {
+                                        "type": "string",
+                                        "format": "grade",
+                                        "example": "1 OR 2 OR 3 OR 4 OR 5"
+                                    },
+                                    "receiver_id": {
+                                        "type": "string",
+                                        "format": "receiver_id",
+                                        "example": "1"
+                                    },
+                                    "message": {
+                                        "type": "string",
+                                        "format": "message",
+                                        "example": "hello world"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/singlePageEstimates": {
+            "post": {
+                "tags": [
+                    "estimates"
+                ],
+                "summary": "singlePageEstimates",
+                "description": "singlePageEstimates",
+                "operationId": "singlePageEstimates",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ],
+                                "properties": {
+                                    "notification_id": {
+                                        "type": "string",
+                                        "format": "notification_id",
+                                        "example": "1"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/StartOnline": {
+            "post": {
+                "tags": [
+                    "Active And No Active role_id = 3"
+                ],
+                "summary": "StartOnline",
+                "description": "StartOnline",
+                "operationId": "StartOnline",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/isOnlineUser": {
+            "post": {
+                "tags": [
+                    "Active And No Active role_id = 3"
+                ],
+                "summary": "isOnlineUser",
+                "description": "isOnlineUser",
+                "operationId": "isOnlineUser",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/OrderTranzaction": {
+            "post": {
+                "tags": [
+                    "OrderTranzaction"
+                ],
+                "summary": "OrderTranzaction",
+                "description": "OrderTranzaction",
+                "operationId": "OrderTranzaction",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/newPhoneRegister": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "newPhoneRegister",
+                "description": "newPhoneRegister",
+                "operationId": "newPhoneRegister",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ],
+                                "properties": {
+                                    "phone": {
+                                        "type": "string",
+                                        "format": "phone",
+                                        "example": "+37493073584"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/dublnewPhoneRegister": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "dublnewPhoneRegister",
+                "description": "dublnewPhoneRegister",
+                "operationId": "dublnewPhoneRegister",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ],
+                                "properties": {
+                                    "phone": {
+                                        "type": "string",
+                                        "format": "phone",
+                                        "example": "+37493073584"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/comparecode": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "comparecode",
+                "description": "comparecode",
+                "operationId": "comparecode",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ],
+                                "properties": {
+                                    "phone": {
+                                        "type": "string",
+                                        "format": "phone",
+                                        "example": "+37493073584"
+                                    },
+                                    "phone_code": {
+                                        "type": "string",
+                                        "format": "phone_code",
+                                        "example": "1111"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/register": {
+            "post": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "register",
+                "description": "register",
+                "operationId": "register",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "format": "name",
+                                        "example": "user"
+                                    },
+                                    "surname": {
+                                        "type": "surname",
+                                        "format": "surname",
+                                        "example": "surname"
+                                    },
+                                    "photo": {
+                                        "type": "photo",
+                                        "format": "photo",
+                                        "example": "photo.jpg"
+                                    },
+                                    "email": {
+                                        "type": "email",
+                                        "format": "email",
+                                        "example": "email"
+                                    },
+                                    "phone": {
+                                        "type": "phone",
+                                        "format": "phone",
+                                        "example": "phone"
+                                    },
+                                    "region": {
+                                        "type": "region",
+                                        "format": "region",
+                                        "example": "region"
+                                    },
+                                    "region_id": {
+                                        "type": "region",
+                                        "format": "region",
+                                        "example": "region_id"
+                                    },
+                                    "city": {
+                                        "type": "city",
+                                        "format": "city",
+                                        "example": "city"
+                                    },
+                                    "city_id": {
+                                        "type": "city_id",
+                                        "format": "city_id",
+                                        "example": "city_id"
+                                    },
+                                    "password": {
+                                        "type": "password",
+                                        "format": "password",
+                                        "example": "11111111"
+                                    },
+                                    "role_id": {
+                                        "type": "role_id",
+                                        "format": "role_id",
+                                        "example": "2 OR 3"
+                                    },
+                                    "if register role_id = 3": {
+                                        "type": "if register role_id = 3",
+                                        "format": "if register role_id = 3",
+                                        "example": "if register role_id = 3"
+                                    },
+                                    "category_name": {
+                                        "type": "category_name",
+                                        "format": "category_name",
+                                        "example": "category_name"
+                                    },
+                                    "category_id": {
+                                        "type": "category_id",
+                                        "format": "category_id",
+                                        "example": "category_id"
+                                    },
+                                    "sub_category_name": {
+                                        "type": "sub_category_name",
+                                        "format": "sub_category_name",
+                                        "example": "sub_category_name"
+                                    },
+                                    "sub_category_id": {
+                                        "type": "sub_category_id",
+                                        "format": "sub_category_id",
+                                        "example": "sub_category_id"
+                                    },
+                                    "vin_code": {
+                                        "type": "vin_code",
+                                        "format": "vin_code",
+                                        "example": "vin_code"
+                                    },
+                                    "AdditionalEquipmentTransport": {
+                                        "type": "AdditionalEquipmentTransport",
+                                        "format": "AdditionalEquipmentTransport",
+                                        "example": "kosh^manual"
+                                    },
+                                    "tex_passport_photo": {
+                                        "type": "tex_passport_photo",
+                                        "format": "tex_passport_photo",
+                                        "example": "tex_passport_photo"
+                                    },
+                                    "transport_photo": {
+                                        "type": "transport_photo",
+                                        "format": "transport_photo",
+                                        "example": "transport_photo"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/RoleId2MyProfile": {
+            "get": {
+                "tags": [
+                    "Role_id_2_Profile"
+                ],
+                "summary": "Get list of GetMyBrone",
+                "description": "Returns list of GetMyBrone",
+                "operationId": "RoleId2MyProfile",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/updateRoleId2MyProfile": {
+            "post": {
+                "tags": [
+                    "Role_id_2_Profile"
+                ],
+                "summary": "updateRoleId2MyProfile",
+                "description": "updateRoleId2MyProfile",
+                "operationId": "updateRoleId2MyProfile",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "format": "name",
+                                        "example": "User"
+                                    },
+                                    "surname": {
+                                        "type": "string",
+                                        "format": "surname",
+                                        "example": "Useryan"
+                                    },
+                                    "region": {
+                                        "type": "region",
+                                        "format": "region",
+                                        "example": "region"
+                                    },
+                                    "region_id": {
+                                        "type": "region_id",
+                                        "format": "region_id",
+                                        "example": "region_id"
+                                    },
+                                    "city": {
+                                        "type": "city",
+                                        "format": "city",
+                                        "example": "city"
+                                    },
+                                    "city_id": {
+                                        "type": "city_id",
+                                        "format": "city_id",
+                                        "example": "city_id"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/UpdateRoleId2Phone": {
+            "post": {
+                "tags": [
+                    "Role_id_2_Profile"
+                ],
+                "summary": "UpdateRoleId2Phone",
+                "description": "UpdateRoleId2Phone",
+                "operationId": "UpdateRoleId2Phone",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ],
+                                "properties": {
+                                    "old_phone": {
+                                        "type": "string",
+                                        "format": "name",
+                                        "example": "old_phone"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/SendCallNewNumberRoleid2": {
+            "post": {
+                "tags": [
+                    "Role_id_2_Profile"
+                ],
+                "summary": "SendCallNewNumberRoleid2",
+                "description": "SendCallNewNumberRoleid2",
+                "operationId": "SendCallNewNumberRoleid2",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ],
+                                "properties": {
+                                    "new_phone": {
+                                        "type": "string",
+                                        "format": "name",
+                                        "example": "new_phone"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/CompareCodeNewNumber": {
+            "post": {
+                "tags": [
+                    "Role_id_2_Profile"
+                ],
+                "summary": "CompareCodeNewNumber",
+                "description": "CompareCodeNewNumber",
+                "operationId": "CompareCodeNewNumber",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ],
+                                "properties": {
+                                    "new_phone": {
+                                        "type": "string",
+                                        "format": "name",
+                                        "example": "new_phone"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/RoleId2Updateavatar": {
+            "post": {
+                "tags": [
+                    "Role_id_2_Profile"
+                ],
+                "summary": "RoleId2Updateavatar",
+                "description": "RoleId2Updateavatar",
+                "operationId": "RoleId2Updateavatar",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ],
+                                "properties": {
+                                    "avatar": {
+                                        "type": "file",
+                                        "format": "file",
+                                        "example": "photo.png"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/RoleId2UpdateEmail": {
+            "post": {
+                "tags": [
+                    "Role_id_2_Profile"
+                ],
+                "summary": "RoleId2UpdateEmail",
+                "description": "RoleId2UpdateEmail",
+                "operationId": "RoleId2UpdateEmail",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "email",
+                                        "format": "email",
+                                        "example": "email"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/RoleId3UpdateProfilePhoto": {
+            "post": {
+                "tags": [
+                    "Role_id_3_Profile"
+                ],
+                "summary": "RoleId3UpdateProfilePhoto",
+                "description": "RoleId3UpdateProfilePhoto",
+                "operationId": "RoleId3UpdateProfilePhoto",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ],
+                                "properties": {
+                                    "avatar": {
+                                        "type": "file",
+                                        "format": "file",
+                                        "example": "photo.png"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/SearchCategoryName": {
+            "post": {
+                "tags": [
+                    "Search"
+                ],
+                "summary": "SearchCategoryName",
+                "description": "SearchCategoryName",
+                "operationId": "SearchCategoryName",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ],
+                                "properties": {
+                                    "category_name": {
+                                        "type": "string",
+                                        "format": "category_name",
+                                        "example": "Строительная техника"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/FilterUsers": {
+            "post": {
+                "tags": [
+                    "Search"
+                ],
+                "summary": "FilterUsers",
+                "description": "FilterUsers",
+                "operationId": "FilterUsers",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ],
+                                "properties": {
+                                    "category_id": {
+                                        "type": "string",
+                                        "format": "category_id",
+                                        "example": "1"
+                                    },
+                                    "sub_category_id": {
+                                        "type": "string",
+                                        "format": "sub_category_id",
+                                        "example": "2"
+                                    },
+                                    "latitude": {
+                                        "type": "string",
+                                        "format": "latitude",
+                                        "example": "40.1817"
+                                    },
+                                    "longitude": {
+                                        "type": "string",
+                                        "format": "longitude",
+                                        "example": "44.5099"
+                                    },
+                                    "radius": {
+                                        "type": "string",
+                                        "format": "radius",
+                                        "example": "10"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/OnePageRoleId3": {
+            "post": {
+                "tags": [
+                    "Search"
+                ],
+                "summary": "OnePageRoleId3",
+                "description": "OnePageRoleId3",
+                "operationId": "OnePageRoleId3",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ],
+                                "properties": {
+                                    "user_id": {
+                                        "type": "string",
+                                        "format": "user_id",
+                                        "example": "5"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/StartChat": {
+            "post": {
+                "tags": [
+                    "tender"
+                ],
+                "summary": "StartChat",
+                "description": "StartChat",
+                "operationId": "StartChat",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ],
+                                "properties": {
+                                    "receiver_id": {
+                                        "type": "string",
+                                        "format": "receiver_id",
+                                        "example": "1"
+                                    },
+                                    "tender_id": {
+                                        "type": "string",
+                                        "format": "tender_id",
+                                        "example": "2"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/getTendersChat": {
+            "get": {
+                "tags": [
+                    "tender"
+                ],
+                "summary": "Get list of getTendersChat",
+                "description": "Returns list of getTendersChat",
+                "operationId": "getTendersChat",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/createNewMessageTender": {
+            "post": {
+                "tags": [
+                    "tender"
+                ],
+                "summary": "createNewMessageTender",
+                "description": "createNewMessageTender",
+                "operationId": "createNewMessageTender",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ],
+                                "properties": {
+                                    "receiver_id": {
+                                        "type": "string",
+                                        "format": "receiver_id",
+                                        "example": "1"
+                                    },
+                                    "tender_id": {
+                                        "type": "string",
+                                        "format": "tender_id",
+                                        "example": "2"
+                                    },
+                                    "message": {
+                                        "type": "string",
+                                        "format": "message",
+                                        "example": "Hello World"
+                                    },
+                                    "file": {
+                                        "type": "string",
+                                        "format": "file",
+                                        "example": "photo.png"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/singlePageChatTender": {
+            "post": {
+                "tags": [
+                    "tender"
+                ],
+                "summary": "singlePageChatTender",
+                "description": "singlePageChatTender",
+                "operationId": "singlePageChatTender",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ],
+                                "properties": {
+                                    "receiver_id": {
+                                        "type": "string",
+                                        "format": "receiver_id",
+                                        "example": "1"
+                                    },
+                                    "tender_id": {
+                                        "type": "string",
+                                        "format": "tender_id",
+                                        "example": "2"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "http://80.78.246.59/Stech/public/api/userUpdatePassword": {
+            "post": {
+                "tags": [
+                    "User Update Password"
+                ],
+                "summary": "userUpdatePassword",
+                "description": "userUpdatePassword",
+                "operationId": "userUpdatePassword",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "phone"
+                                ],
+                                "properties": {
+                                    "old_password": {
+                                        "type": "string",
+                                        "format": "name",
+                                        "example": "old_password"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "name",
+                                        "example": "password"
+                                    },
+                                    "password_confirmation": {
+                                        "type": "string",
+                                        "format": "name",
+                                        "example": "password_confirmation"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
